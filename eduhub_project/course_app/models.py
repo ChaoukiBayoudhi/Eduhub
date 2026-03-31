@@ -30,3 +30,24 @@ class Course(models.Model):
     #it's also used to display the object in the API
     def __str__(self)->str:
         return f"{self.title} - {self.instructor.username}"
+
+class Lesson(models.Model):
+    id=models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    title=models.CharField(max_length=255)
+    description=models.TextField()
+    video_url=models.URLField()
+    course=models.ForeignKey(Course, on_delete=models.CASCADE)
+    duration=models.DurationField()
+    order=models.PositiveIntegerField()
+    content=models.TextField()
+    created_at=models.DateTimeField(auto_now_add=True)
+    class Meta:
+        db_table = 'lessons'
+        verbose_name = 'Lesson'
+        verbose_name_plural = 'Lessons'
+        ordering = ['order']
+        indexes = [
+            models.Index(fields=['course', 'order']),
+        ]
+    def __str__(self)->str:
+        return f"{self.title} - {self.course.title}"
