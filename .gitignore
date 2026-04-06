@@ -31,6 +31,10 @@ staticfiles/
 *.swo
 .DS_Store
 
+# Course statements / briefs (local PDFs)
+statement/
+satement/
+
 # Pip
 *.egg-info/
 .eggs/
