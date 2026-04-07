@@ -25,3 +25,18 @@ class StudentLevel(models.IntegerChoices):
     COLLEGE = 4, 'student level 4'
     UNIVERSITY = 5, 'student level 5'
     OTHER = 6, 'student level 6'
+
+class EnrollmentStatus(models.TextChoices):
+    PENDING = 'pending', 'Pending'
+    ACTIVE = 'active', 'Active'
+    COMPLETED = 'completed', 'Completed'
+    CANCELLED = 'cancelled', 'Cancelled'
+    ON_HOLD = 'on_hold', 'On Hold'
+
+class AssignmentStatus(models.TextChoices):
+    PENDING = 'pending', 'Pending'
+    SUBMITTED = 'submitted', 'Submitted'
+    GRADED = 'graded', 'Graded'
+    FAILED = 'failed', 'Failed'
+    PASSED = 'passed', 'Passed'
+    ON_HOLD = 'on_hold', 'On Hold'

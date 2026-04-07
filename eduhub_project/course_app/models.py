@@ -1,5 +1,6 @@
+import uuid
+
 from django.db import models
-from django.db.models.fields import uuid
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 from enumerations.enums import CourseStatus
@@ -29,7 +30,9 @@ class Course(models.Model):
     #it's also used to display the object in the console
     #it's also used to display the object in the API
     def __str__(self)->str:
-        return f"{self.title} - {self.instructor.username}"
+        if self.instructor_id:
+            return f"{self.title} - {self.instructor.username}"
+        return self.title
 
 class Lesson(models.Model):
     id=models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)

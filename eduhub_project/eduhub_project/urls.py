@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
-from eduhub_project import course_app
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('eduhub/',include('course_app.urls'))
+    path('api/courses/', include('course_app.urls')),
+    path('api/users/', include('user_app.urls')),
+    
 ]

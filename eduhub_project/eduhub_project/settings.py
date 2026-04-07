@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user_app',
     'course_app',
+    'enrollments_app',
+    'assignments_app',
     'rest_framework', #DRF is a library for building RESTful APIs in Django
     'corsheaders', #CORS is a library for handling Cross-Origin Resource Sharing (CORS) in Django
 ]
