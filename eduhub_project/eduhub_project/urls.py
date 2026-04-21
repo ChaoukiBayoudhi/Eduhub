@@ -20,15 +20,5 @@ from django.urls import include, path
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path(
-        "api/",
-        include(
-            [
-                path("", include("course_app.urls")),
-                path("", include("user_app.urls")),
-                path("", include("enrollments_app.urls")),
-                path("", include("assignments_app.urls")),
-            ]
-        ),
-    ),
+    path("api/",include('eduhub_project.api_urls')),
 ]
