@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'eduhub_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'eduhub_db',
+        'USER': 'ing3b_user',
+        'PASSWORD': 'user123',
+        'HOST': 'localhost', #'127.0.0.1'
+        'PORT': 5432,
     }
 }
 
